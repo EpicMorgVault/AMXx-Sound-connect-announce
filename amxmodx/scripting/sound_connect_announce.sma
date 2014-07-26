@@ -15,8 +15,8 @@ Special thaks to:
 #define MEMBER_FLAG ADMIN_BAN // Flag for member sound
 
 #define PLAYER_MUSIC "misc/player.wav" // Player sound
-#define MEMBER_MUSIC "misc/admin.wav" // Member sound
-#define ADMIN_MUSIC "misc/member.wav" // Admin sound
+#define MEMBER_MUSIC "misc/member.wav" // Member sound, fixed
+#define ADMIN_MUSIC "misc/admin.wav" // Admin sound, fixed
 
 public plugin_precache()
 { 
@@ -27,7 +27,7 @@ public plugin_precache()
 
 public plugin_init() 
 {
-	register_plugin("Sound connect announce", "1.1", "papyrus_kn") 
+	register_plugin("Sound connect announce", "1.1.1", "papyrus_kn, EpicMorg") 
 	register_cvar("sca_version", "1.1", FCVAR_SERVER|FCVAR_SPONLY)
 }
 
@@ -42,3 +42,15 @@ public client_putinserver(id)
 	else if(get_user_flags(id) & ADMIN_FLAG) 
 		client_cmd(0,"spk %s", ADMIN_MUSIC)
 } 
+
+public client_disconnect(id){
+
+	if(get_user_flags(id) & ADMIN_USER)
+		client_cmd(0,"spk %s", PLAYER_MUSIC)
+
+	else if(get_user_flags(id) & MEMBER_FLAG)
+		client_cmd(0,"spk %s", MEMBER_MUSIC)
+
+	else if(get_user_flags(id) & ADMIN_FLAG)
+		client_cmd(0,"spk %s", ADMIN_MUSIC)
+}
