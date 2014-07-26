@@ -43,8 +43,8 @@ public client_putinserver(id)
 		client_cmd(0,"spk %s", ADMIN_MUSIC)
 } 
 
-public client_disconnect(id){
-
+public client_disconnect(id)
+{ 
 	if(get_user_flags(id) & ADMIN_USER)
 		client_cmd(0,"spk %s", PLAYER_MUSIC)
 
