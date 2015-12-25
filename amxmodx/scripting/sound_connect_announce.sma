@@ -7,6 +7,7 @@ Special thaks to:
 	Burton - for testing
 	radko412 - for testing	
 	hateYou - for new order of the code
+	EpicMorg Team - fixes
 */
 
 #include <amxmodx> 
@@ -28,7 +29,7 @@ public plugin_precache()
 public plugin_init() 
 {
 	register_plugin("Sound connect announce", "1.1.1", "papyrus_kn, EpicMorg") 
-	register_cvar("sca_version", "1.1", FCVAR_SERVER|FCVAR_SPONLY)
+	register_cvar("sca_version", "1.1.1", FCVAR_SERVER|FCVAR_SPONLY)
 }
 
 public client_putinserver(id)

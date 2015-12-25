@@ -1,4 +1,5 @@
-AMXx-Sound-connect-announce
+AMXx Sound connect announce
 ===========================
 
-Fork of Sound connect announce plugin
+Fork of Sound connect announce plugin.
+Fixed some sounds and source code.
